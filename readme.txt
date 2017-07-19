@@ -24,4 +24,15 @@ git checkout -b <name>               //创建+切换分支
 git merge <name>                     //合并分支
 git branch -d <name>                 //删除分支
 git log --graph                      //查看分支合并图
-
+git stash                //把工作现场储藏起来
+git stash list
+git stash apply
+git stash drop
+git stash pop
+git branch -D file       //分支还没有合并删除会丢失修改，此处强行删除
+git remote               //查看远程分支
+git remote -v            //远程分支详细信息
+git push origin dev      //推送其他分支
+master 是主分支要时刻与远程同步
+dev    是开发分支，所有团队成员都在上面工作，也需要远程同步
+bug    分支只用于修复bug没有必要推送到远程
