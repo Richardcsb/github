@@ -36,3 +36,21 @@ git push origin dev      //推送其他分支
 master 是主分支要时刻与远程同步
 dev    是开发分支，所有团队成员都在上面工作，也需要远程同步
 bug    分支只用于修复bug没有必要推送到远程
+git tag <name/v1.0>      //新建一个标签
+git tag                  //查看所有标签
+标签默认是在最新的commit上打的，如果忘了打标签则找到历史commit id 然后打上：
+git log --pretty=oneline --abbrev-commit
+git tag v09 id
+git show <tagname>       //查看标签信息
+git tag -a v0.1 -m "version 0.1 released" 362861//带说明的标签
+git show <tagname>       //可以看到说明文字
+git tag -s v0.2 -m "signed version 0.2 released" fec145a //通过-s用私钥签名一个标签，签名采用PGP签名，必须先安装gpg
+git tag -d v0.1          //删除标签
+git push origin v0.1     //推送某个标签到远程
+git push origin --tags    //一次性推送全部尚未推送到远程的本地标签
+删除远程标签
+git tag -d v0.9          //先删除本地标签
+git push origin :refs/tags/v0.9 //然后从远程删除
+git clone git @github.com:Richard/bootstrap.git  //参与开源项目,在github上先克隆到自己仓库，然后再克隆到本地仓库
+git config --globa color.ui true  //自定义git,这里让Git显示颜色
+
