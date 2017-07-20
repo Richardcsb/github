@@ -1,4 +1,0 @@
-配置hosts:
-git clone https://github.com/racaljk/hosts.git
-sudo rm /etc/hosts
-sudo ln -s /home/cs/hosts/hosts /etc/
