@@ -3,3 +3,8 @@ git clone https://github.com/racaljk/hosts.git
 sudo rm /etc/hosts
 sudo ln -s /home/cs/hosts/hosts /etc/
 
+scrip:
+写一个后缀为.sh的文本
+chmod +x ./scrip.sh       //添加权限
+./srip.sh
+
