@@ -1,4 +1,4 @@
-# note
+# [markdown](https://github.com/younghz/Markdown)
 #### 1.host:
 - git clone https://github.com/racaljk/hosts.git	
 - sudo rm /etc/hosts
@@ -32,6 +32,6 @@
 - sudo apt autoremove <package>  //删除为满足依赖而安装的软件包但现在不需要
 - sudo apt autoclean <package>   //删除archives/目录下过期*.deb
 - sudo apt clean <package>       //删除archives/目录下所有*.deb
----
 #### \#删除软件及其配置文件
 - sudo apt --purge remove <*package*>
+***
