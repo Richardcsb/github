@@ -1,8 +1,8 @@
 # note
 #### 1.host:
-> git clone https://github.com/racaljk/hosts.git
-> sudo rm /etc/hosts
-> sudo ln -s /home/c/hosts /etc/s/hosts
+- git clone https://github.com/racaljk/hosts.git	
+- sudo rm /etc/hosts
+- sudo ln -s /home/c/hosts /etc/s/hosts
 ---
 #### 2.scrip:
 > 写一个后缀为.sh的文本
