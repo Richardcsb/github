@@ -22,13 +22,16 @@
 - passwd chen
 -  visuso//添加普通用户权限
 - userdel -r chen//删除
+---
 #### 5.install mqtt
 - sudo apt install mosquitto
 - mosquitto -r 1883 -d
+---
 #### 6.remove
 - sudo apt purge <package>   //删除软件包不保留配置文件
 - sudo apt autoremove <package>  //删除为满足依赖而安装的软件包但现在不需要
 - sudo apt autoclean <package>   //删除archives/目录下过期*.deb
 - sudo apt clean <package>       //删除archives/目录下所有*.deb
+---
 #### \#删除软件及其配置文件
 - sudo apt --purge remove <*package*>
