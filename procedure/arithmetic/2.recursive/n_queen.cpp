@@ -23,8 +23,8 @@ void NQueen(int k)//在0～k-1行皇后已经摆好的情况下，摆第k行极�
 	}
 	for(i=0;i<N;i++){//尝试第k个皇后的位置
 		int j;
-		for(j=0;j<k;j++){//和已经摆好的k个皇后位置相比较,看是否冲突
-			if(queenPos[j]==i||abs(queenPos[j]-i)==abs(k-j)) //abs()用于求绝对值
+		for(j=0;j<k;j++){//和已经摆好的k个皇后(0~k-1)位置相比较,看是否冲突
+			if(i==queenPos[j] || abs(queenPos[j]-i)==abs(k-j)) //abs()用于求绝对值
 				break;//冲突则,测试下一个位置
 		}
 		if(j==k){
