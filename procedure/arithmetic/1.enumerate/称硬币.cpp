@@ -1,3 +1,6 @@
+/*有12枚硬币，其中有一枚是假币，但是不知是比真币轻还是重，
+  现已知这些硬币在天平的三次称量结果，请确定假币是轻还是重。
+  （数据保证一定能得出结果）*/
 #include<iostream>
 #include<cstring>
 using namespace std;
@@ -41,6 +44,7 @@ bool IsFake(char c,bool light)
 		{
 			case 'u':
 				if(strchr(pRight,c)==NULL)
+				//strchr(pRight,c)函数【返回值】如果找到指定的字符则返回该字符所在地址，否则返回 NULL。
 					return false;
 				break;
 			case 'e':

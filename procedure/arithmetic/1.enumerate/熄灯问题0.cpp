@@ -1,3 +1,4 @@
+ /*ä¸€ç›ç¯æŒ‰ä¸‹æ—¶å…¶ç›¸é‚»çš„ç¯çŠ¶æ€éƒ½ä¼šæ”¹å˜ï¼Œç°ç»™å®šæ¯ç›ç¯çš„åˆå§‹çŠ¶æ€ï¼Œæ±‚ç†„ç­æ‰€æœ‰ç¯çš„ä¸€ç§æ–¹æ¡ˆ*/
  #include<iostream>
  #include<string>
  #include<cstring>
@@ -6,22 +7,22 @@
  char oriLights[5];
  char Lights[5];
  char result[5];
-int GetBit(char c,int i)//»ñµÃµØi¸ö±ÈÌØÊı×Ö 
+int GetBit(char c,int i)
  {
  	return (c>>i)&1;
  }
-void SetBit(char c,int i,int v)//¸øµÚi¸ö±ÈÌØ¸³Öµ 
+void SetBit(char c,int i,int v)
 {
-	if(v)                          //1000 0110¸³iÎ»Îª1 
-		c |=(1<<i);                //0000 0100
-	else                           //1111 1011¸³iÎ»Îª0
-		c &=~(1<<i);               //1000 0010
+	if(v)                          
+		c |=(1<<i);                
+	else                          
+		c &=~(1<<i);               
 }
-void FlipBit(char &c,int i)//·­×ªµÚiÎ»¿ª¹Ø½á¹û 
+void FlipBit(char &c,int i)
 {
-	c^=(1<<i);                      //1010 1010
-}                                   //0000 0100     1010 1110
-void OutPutResult(int t,char result[])//Êä³öµÚi¸ö±ÈÌØÊıÖµ 
+	c^=(1<<i);                      
+}                                   
+void OutPutResult(int t,char result[])
 {
 	cout<<"PUZZLE #"<<t<<endl;
 	for(int i=0;i<5;++i){
