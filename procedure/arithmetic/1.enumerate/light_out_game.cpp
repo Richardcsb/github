@@ -6,7 +6,7 @@
  using namespace std;
  char oriLights[5];//原始灯状态
  char Lights[5];//变化灯状态
- char result[5];//灯最后状态
+ char result[5];//灯的开关状态
 int GetBit(char c,int i)//获取一行中第i盏灯的状态
  {
  	return (c>>i)&1;
@@ -27,7 +27,7 @@ void OutPutResult(int t,char result[])
 {
 	cout<<"PUZZLE #"<<t<<endl;
 	for(int i=0;i<5;++i){
-		for(int j;j<6;++j){
+		for(int j;j<5;++j){
 			cout<<GetBit(result[i],j);
 			if(i<5)
 				cout<<" ";
@@ -37,32 +37,28 @@ void OutPutResult(int t,char result[])
 }
  int main()
  {
- 	int T;
-	cin>>T;
-	for(int t=1;t<=T;++t)
-	{
 		for(int i=0;i<5;++i)
 		{
-			for(int j=0;j<6;++j)
+			for(int j=0;j<5;++j)
 			{
 				int s;
 				cin>>s;
 				SetBit(oriLights[i],j,s);	
 			}	
 		}
-		for(int n=0;n<64;++n)//枚举第一行开关的2^6 = 64种可能
+		for(int n=0;n<32;++n)//枚举第一行开关的2^6 = 64种可能
 		{
 			int switchs=n;    //当前行开关的状态
 			memcpy(Lights,oriLights,sizeof(oriLights));//strcpy()只拷贝字符串，遇到\0则停止
 			for(int i=0;i<5;++i)//处理每一行的灯
 			{
 				result[i]=switchs; //储存每一行开关的状态
-				for(int j=0;j<6;j++){
+				for(int j=0;j<5;j++){
 					if(GetBit(switchs,j)){
 						if(j>0)
 							FlipBit(Lights[i],j);
 						FlipBit(Lights[i],j);
-						if(j<5)
+						if(j<4)
 							FlipBit(Lights[i],j+1);
 							
 					}   
@@ -72,10 +68,9 @@ void OutPutResult(int t,char result[])
 				switchs=Lights[i];//由第i行灯的状态，就是第i+1行开关的状态
 			}
 			if(Lights[4] == 0){
-				OutPutResult(t,result);
+				OutPutResult(1,result);
 				break;
 			}	
 		}	
-	}  
  	return 0;
  }
