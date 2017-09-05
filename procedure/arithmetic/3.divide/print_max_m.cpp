@@ -1,37 +1,51 @@
 #include<iostream>                 
-    using namespace std;
-    int a[10]={13,27,19,2,8,12,3,8,30,89};
-    int b[10];
-    void arrangeRight(int a[],int n)
-    {
-        if(long_a - i + 1))
-            return ;
-        i = 0;
-        j = sizeof(a)/sizeof(int) - 1;
-        while(i != j){
-            while(i != j && a[j] >= k)
-                --j;
+using namespace std;
+#define print cout<<"------"<<endl
+int a[]={13,30,19,2,8,12,3,8,16,28};
+int k;
+int n = 10;
+inline int swap(int & a,int & b)
+{
+    int tem = a;
+    a = b;
+    b = tem;
+}
+void arrangeRight(int a[],int k,int i,int j)
+{
+    int c;
+    int s = i,e = j;
+    int key = a[s];
 
-            swap(a[i],a[j]);
+    c = n - e;
+    if (c == k)
+        return;
 
-            while(i != j && a[i] <= k)
-                ++i;
-            swap(a[i],a[j]);
-        }
-        if(n < (long_a - i + 1))
-            arrangeRight(a,n);
-        if(n > (long_a - i + 1))
-            arrangeRight(a,n - (long_a - i + 1));
+    while(e != s){
+        while(s != e && a[e] >= key)
+            --e;
+        swap(a[s],a[e]);
+
+        while(s != e && a[s] <= key)
+            ++s;
+        swap(a[s],a[e]);
     }
-    int main()
-    {	
-        int size=sizeof(a)/4;                     
-        MergeSort(a,0,size-1,b);
-        for(int i=0;i<size;++i)
-            cout<<a[i]<<",";
-        cout<<endl; 
-        return 0;
+    if(c>k)
+        arrangeRight(a,k,e,j);
+    else
+        arrangeRight(a,k-e,0,e);
+}
+int main()
+{	
+    int j;
+    cout<<"please enter the number which you want to print"<<endl;
+    cin>>k;
+    j = sizeof(a)/sizeof(int);
+    arrangeRight(a,k,0,j-1);
+    for(int i = 0;i < 10;i++){
+        cout<<a[i]<<" "<<endl;
     }
+    return 0;
+}
     
     
     
