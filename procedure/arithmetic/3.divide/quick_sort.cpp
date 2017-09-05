@@ -1,7 +1,7 @@
 #include<iostream>                    
 using namespace std;
 int a[]={93,27,30,2,8,12,2,8,30,89,55,78};
-void swap(int &a,int &b)       
+inline void swap(int &a,int &b)       
 {
 	int tmp=a;
 	a=b;

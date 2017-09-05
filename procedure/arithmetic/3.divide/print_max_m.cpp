@@ -2,31 +2,26 @@
     using namespace std;
     int a[10]={13,27,19,2,8,12,3,8,30,89};
     int b[10];
-    void Merge(int a[],int s,int m,int e,int tmp[])
+    void arrangeRight(int a[],int n)
     {
-        int pb=0;                       
-        int p1=s,p2=m+1;               
-        while(p1<=m&&p2<=e){ 
-            if(a[p1]<a[p2])           
-                tmp[pb++]=a[p1++];
-            else
-                tmp[pb++]=a[p2++];
+        if(long_a - i + 1))
+            return ;
+        i = 0;
+        j = sizeof(a)/sizeof(int) - 1;
+        while(i != j){
+            while(i != j && a[j] >= k)
+                --j;
+
+            swap(a[i],a[j]);
+
+            while(i != j && a[i] <= k)
+                ++i;
+            swap(a[i],a[j]);
         }
-        while(p1<=m)
-            tmp[pb++]=a[p1++];
-        while(p2<=e)
-            tmp[pb++]=a[p2++];
-        for(int i=0;i<e-s+1;++i)
-                a[s+i]=tmp[i];
-    }
-    void MergeSort(int a[],int s,int e,int tmp[])
-    {
-        if(s<e){                                 
-            int m=s+(e-s)/2;
-            MergeSort(a,s,m,tmp);                
-            MergeSort(a,m+1,e,tmp);
-            Merge(a,s,m,e,tmp);                     
-        }
+        if(n < (long_a - i + 1))
+            arrangeRight(a,n);
+        if(n > (long_a - i + 1))
+            arrangeRight(a,n - (long_a - i + 1));
     }
     int main()
     {	

@@ -27,7 +27,7 @@ void OutPutResult(int t,char result[])
 {
 	cout<<"PUZZLE #"<<t<<endl;
 	for(int i=0;i<5;++i){
-		for(int j;j<6;++j){
+		for(int j=0;j<6;++j){
 			cout<<GetBit(result[i],j);
 			if(i<5)
 				cout<<" ";
@@ -41,6 +41,9 @@ void OutPutResult(int t,char result[])
 	cin>>T;
 	for(int t=1;t<=T;++t)
 	{
+		memset(oriLights,0,sizeof(oriLights));
+		/*这个函数通常为新申请的内存做初始化工作， 其返回值为指向s的指针,
+		作用是在一段内存块中填充某个给定的值，它是对较大的结构体或数组进行清零操作的一种最快方法*/
 		for(int i=0;i<5;++i)
 		{
 			for(int j=0;j<6;++j)
@@ -52,23 +55,23 @@ void OutPutResult(int t,char result[])
 		}
 		for(int n=0;n<64;++n)//枚举第一行开关的2^6 = 64种可能
 		{
-			int switchs=n;    //当前行开关的状态
 			memcpy(Lights,oriLights,sizeof(oriLights));//strcpy()只拷贝字符串，遇到\0则停止
+			int switchs=n;    //当前行开关的状态
 			for(int i=0;i<5;++i)//处理每一行的灯
 			{
 				result[i]=switchs; //储存每一行开关的状态
 				for(int j=0;j<6;j++){
 					if(GetBit(switchs,j)){
 						if(j>0)
-							FlipBit(Lights[i],j);
+							FlipBit(Lights[i],j-1);
 						FlipBit(Lights[i],j);
 						if(j<5)
 							FlipBit(Lights[i],j+1);
 							
 					}   
 				}
-				if(i<5)
-					Lights[i+1]^=switchs;
+				if(i<4)
+					Lights[i+1] ^= switchs;
 				switchs=Lights[i];//由第i行灯的状态，就是第i+1行开关的状态
 			}
 			if(Lights[4] == 0){

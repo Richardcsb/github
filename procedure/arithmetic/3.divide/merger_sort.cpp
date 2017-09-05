@@ -30,7 +30,7 @@
     }
     int main()
     {	
-        int size=sizeof(a)/4;                   
+        int size=sizeof(a)/sizeof(int);                   
         MergeSort(a,0,size-1,b);
         for(int i=0;i<size;++i)
             cout<<a[i]<<",";

@@ -1,8 +1,9 @@
-# [markdown](https://github.com/younghz/Markdown)
-#### 1.host:
+#### 1.
 - git clone https://github.com/racaljk/hosts.git	
 - sudo rm /etc/hosts
 - sudo ln -s /home/c/hosts /etc/s/hosts
+- watch -n 5 who (等待用户登录)
+- stat
 ---
 #### 2.scrip:
 - 写一个后缀为.sh的文本
@@ -35,3 +36,8 @@
 #### \#删除软件及其配置文件
 - sudo apt --purge remove <*package*>
 ***
+#### 7.ps command
+- ps -e | grep apt (ever use)
+- \-e：显示所有程序
+- \-f：显示UID,PPIP,C与STIME栏位
+- \-f：显示UID,PPIP,C与STIME栏位
