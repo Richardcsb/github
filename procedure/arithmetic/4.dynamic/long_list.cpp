@@ -1,3 +1,4 @@
+//子问题，以ak为终点的子序列长度
 #include<iostream>
 #include<string> 
 #include<algorithm>
@@ -20,6 +21,6 @@ int main()
 			if(a[i]>a[j])
 				maxLen[i]=max(maxLen[i],maxLen[j]+1);
 		}
-	cout<<* max_element(maxLen+1,maxLen+N+1); 
+	cout<<* max_element(maxLen+1,maxLen+N+1); //max_element（）算法返回一个表示序列中最大元素的迭代器
 	return 0;
 }
