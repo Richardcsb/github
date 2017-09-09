@@ -18,8 +18,9 @@
 - ssh root@60.205.223.161 			//root权限登录服务器
 - ssh chen@60.205.223.161	
 - ##### 添加一个用户:
-- useradd -m -g users -s /bin/bash/ chen
-- user
+- adduser username
+- usermod -aG sudo username//添加sudo权限
+
 - passwd chen
 -  visuso//添加普通用户权限
 - userdel -r chen//删除
@@ -41,3 +42,8 @@
 - \-e：显示所有程序
 - \-f：显示UID,PPIP,C与STIME栏位
 - \-f：显示UID,PPIP,C与STIME栏位
+#### 8.hexo安装
+-
+-sudo apt-get install nodejs-legacy
+-sudo npm install -g hexo-cli
+-参考https://hexo.io
