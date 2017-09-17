@@ -47,3 +47,15 @@
 -sudo apt-get install nodejs-legacy
 -sudo npm install -g hexo-cli
 -参考https://hexo.io
+#### 9.创建桌面图标
+[Desktop Entry]
+Version=tsetup.1.1.23
+Name=Telegram
+Comment=Telegram Desktop
+Exec=/home/shao/Documents/install/Telegram/Telegram
+Icon=/home/shao/Documents/install/Telegram/Telegram
+Terminal=false
+Type=Application
+Categories=Utility;Application;  
+
+cp Telegram.desktop ~/.local/share/applications
