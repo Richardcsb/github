@@ -49,13 +49,12 @@
 -参考https://hexo.io
 #### 9.创建桌面图标
 [Desktop Entry]
-Version=tsetup.1.1.23
-Name=Telegram
-Comment=Telegram Desktop
-Exec=/home/shao/Documents/install/Telegram/Telegram
-Icon=/home/shao/Documents/install/Telegram/Telegram
-Terminal=false
-Type=Application
-Categories=Utility;Application;  
+  2 Version=default
+  3 Name=XX-Net
+  4 Exec=/home/shao/Documents/install/XX-Net-master/start > /dev/null
+  5 Terminal=false
+  6 Icon=/home/shao/Documents/install/XX-Net-master/code/default/launcher/web_ui    /favicon.ico
+  7 Type=Application
+  8 Categories=Development
 
-cp Telegram.desktop ~/.local/share/applications
+cp XX-Net.desktop ~/.local/share/applications
